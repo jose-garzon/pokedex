@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+// fonts
+$main-font: 'Righteous', cursive;
+
+// colors
+$main-red: #fe1a55;
+$darker-red: #ca215a;
+$shadow: #481557;
+$white: #fff9f1;
+$grey: #f2f4e7;
+$blue: #01dbff;
+$middle-blue: #00aaf7;
+$light-blue: #70e0e1;
+$dark-blue: #000850;
+$yellow: #f9ee60;
+$green: #30f454;
+$orange: #fb8e55;
+$shadow-transparent: rgba(72, 21, 87, .5);
+
+// shadows
+
+$main-shadow: 0 30px 0 $shadow;
+$sphere-shadow: inset -8px -8px 0 $shadow-transparent;
+$small-sphere-shadow: inset -4px -2px 0 $shadow-transparent;
