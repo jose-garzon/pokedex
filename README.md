@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🖍 Challenge HTML 06
 
 Positions in CSS
@@ -22,3 +23,6 @@ Si alguien quiere agregar o mejorar algo, lo invito a colaborar directamente en 
 ## 🖍 Licencia
 
 challenge-html-06 se lanza bajo la licencia [MIT](https://opensource.org/licenses/MIT).
+=======
+# pokedex
+>>>>>>> 9d497cc8d4dc0e0904aefdf05a0bc592c00deb38
