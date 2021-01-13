@@ -1,0 +1,13 @@
+.bottom-screens {
+	display: flex;
+	justify-content: space-between;
+	width: 75%;
+	margin: 0 auto;
+	margin-top: 60px;
+	&__screen {
+		width: 45%;
+		background: $dark-blue;
+		height: 70px;
+		border-radius: 10px;
+	}
+}

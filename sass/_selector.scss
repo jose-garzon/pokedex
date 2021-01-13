@@ -1,0 +1,56 @@
+.selector {
+	display: flex;
+	justify-content: space-between;
+	width: 75%;
+	margin: 0 auto;
+	margin-top: 15px;
+	&__left {
+		width: 70%;
+		align-self: flex-end;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__box {
+		height: 35px;
+		width: 45%;
+		border-radius: 5px;
+		box-shadow: 5px 5px 0 $shadow;
+		background: $grey;
+	}
+	&__right {
+		width: 20%;
+		display: flex;
+		flex-direction: column;
+	}
+	&__outlets {
+		display: flex;
+		margin-bottom: 10px;
+	}
+	&__outlet {
+		height: 10px;
+		width: 50%;
+		margin-left: 5px;
+		border-radius: 10px;
+		background: $dark-blue;
+	}
+	&__button {
+		position: relative;
+		width: 45px;
+		height: 45px;
+		align-self: flex-end;
+		border: 4px solid $dark-blue;
+		border-radius: 50%;
+		background: $yellow;
+		box-shadow: $small-sphere-shadow;
+		&::after {
+			content: '';
+			width: 8px;
+			height: 8px;
+			left: 5px;
+			top: 8px;
+			background-color: $white;
+			position: absolute;
+			border-radius: 50%;
+		}
+	}
+}

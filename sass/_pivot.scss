@@ -1,0 +1,24 @@
+.pivot {
+	position: relative;
+	background: linear-gradient(
+		90deg,
+		rgba(254, 26, 85, 1) 0%,
+		rgba(254, 26, 85, 1) 20%,
+		rgba(252, 144, 116, 1) 20%,
+		rgba(252, 144, 116, 1) 40%,
+		rgba(254, 26, 85, 1) 40%,
+		rgba(254, 26, 85, 1) 65%,
+		rgba(72, 21, 87, 1) 65%
+	);
+	border-radius: 30px;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		height: 50px;
+		width: 100%;
+		border-radius: 50%;
+		background: $shadow;
+	}
+}

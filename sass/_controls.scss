@@ -1,106 +1,136 @@
 .controls {
-  width: 80%;
-  height: 130px; 
-  bottom: 50px;
-  right: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  padding-right: 30px;
-  &__buttons {
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  &__state-buttons {
-    display: flex;
-    align-items: center;
-  }
-  &__button-blue {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background-color: $middle-blue;
-    box-shadow: 5px 5px 0 rgba($color: #000000, $alpha: .2);
-  }
-  &__button-green {
-    width: 60px;
-    height: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: $green;
-    box-shadow: 5px 5px 0 rgba($color: #000000, $alpha: .2);
-  }
-  &__button-orange {
-    width: 60px;
-    height: 15px;
-    margin: 10px;
-    border-radius: 10px;
-    background-color: $orange;
-    box-shadow: 5px 5px 0 rgba($color: #000000, $alpha: .2);
-  }
-  &__button-yellow {
-    width: 180px;
-    height: 50px;
-    border-radius: 5px;
-    margin-top: 20px;
-    background-color: $yellow;
-  }
-  &__directions {
-    width: 120px;
-    height: 120px;
-    display: grid;
-    grid-template-columns: 1fr 45px 1fr;
-    grid-template-rows: 1fr 45px 1fr;
-  }
-  &__horizontal {
-    background-color: $dark-blue;
-    grid-column: 1 / span 3;
-    grid-row: 2 / span 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 10px;
-    border-radius: 10px;
-    box-shadow: 4px 6px 0 rgba($color: #000000, $alpha: .2);
-  }
-  &__vertical {
-    background-color: $dark-blue;
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-radius: 10px;
-    box-shadow: 6px 6px 0 rgba($color: #000000, $alpha: .2);
-  }
-  &__arrow-up {
-    width: 30px;
-    height: 15px;
-    background-color: rgba($color: #fff, $alpha: .2);
-    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  }
-  &__arrow-down {
-    width: 30px;
-    height: 15px;
-    background-color: rgba($color: #fff, $alpha: .2);
-    clip-path: polygon(50% 100%, 0 0, 100% 0);
-  }
-  &__arrow-left {
-    width: 15px;
-    height: 30px;
-    background-color: rgba($color: #fff, $alpha: .2);
-    clip-path: polygon(100% 100%, 0 50%, 100% 0);
-  }
-  &__arrow-right {
-    width: 15px;
-    height: 30px;
-    background-color: rgba($color: #fff, $alpha: .2);
-    clip-path: polygon(100% 50%, 0 100%, 0 0);
-  }
+	width: 80%;
+	height: 130px;
+	bottom: 50px;
+	right: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: absolute;
+	padding-right: 30px;
+	&__buttons {
+		width: 70%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		z-index: 2;
+	}
+	&__state-buttons {
+		display: flex;
+		align-items: center;
+		width: 100%;
+	}
+	&__button-blue {
+		width: 50px;
+		height: 50px;
+		margin-right: 10px;
+		border-radius: 50%;
+		background-color: $middle-blue;
+		box-shadow: 5px 5px 0 rgba($color: #000000, $alpha: 0.2);
+		cursor: pointer;
+		transition: transform 0.2s, border 0.05s;
+		&:hover {
+			transform: scale(1.05);
+			background: radial-gradient(circle, $blue 0%, $middle-blue 100%);
+			box-shadow: 3px 3px 0 rgba($color: #000000, $alpha: 0.2);
+		}
+	}
+	&__types {
+		display: flex;
+	}
+	&__type {
+		padding: 4px 20px;
+		margin: 10px;
+		border-radius: 15px;
+		font-weight: 700;
+		box-shadow: 5px 5px 0 rgba($color: #000000, $alpha: 0.2);
+	}
+	&__button-yellow {
+		width: 220px;
+		height: 50px;
+		border-radius: 5px;
+		margin-top: 20px;
+		background-color: $yellow;
+		border: none;
+		font-size: 18px;
+		text-align: center;
+		outline: none;
+		&:focus {
+			border: 3px solid $shadow;
+		}
+	}
+	&__directions {
+		width: 120px;
+		height: 120px;
+		display: grid;
+		grid-template-columns: 1fr 45px 1fr;
+		grid-template-rows: 1fr 45px 1fr;
+		place-items: center;
+	}
+	&__dir-button {
+		display: grid;
+		place-items: center;
+		background-color: $dark-blue;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		box-shadow: 6px 6px 0 rgba($color: #000000, $alpha: 0.2);
+		cursor: pointer;
+		transition: 0.2s;
+		&:active {
+			box-shadow: 4px 4px 0 rgba($color: #000000, $alpha: 0.2);
+		}
+	}
+	&__dir-center {
+		width: 100%;
+		height: 100%;
+		grid-column: 2 / span 1;
+		grid-row: 2 / span 1;
+		z-index: 2;
+		background-color: $dark-blue;
+	}
+	&__button-up {
+		grid-column: 2 / span 1;
+		grid-row: 1 / span 1;
+		border-radius: 10px 10px 0 0;
+	}
+	&__button-down {
+		grid-column: 2 / span 1;
+		grid-row: 3 / span 1;
+		border-radius: 0 0 10px 10px;
+	}
+	&__button-left {
+		grid-column: 1 / span 1;
+		grid-row: 2 / span 1;
+		border-radius: 10px 0 0 10px;
+	}
+	&__button-right {
+		grid-column: 3 / span 1;
+		grid-row: 2 / span 1;
+		border-radius: 0 10px 10px 0;
+	}
+	&__arrow-up {
+		width: 30px;
+		height: 15px;
+		background-color: rgba($color: #fff, $alpha: 0.2);
+		clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	}
+	&__arrow-down {
+		width: 30px;
+		height: 15px;
+		background-color: rgba($color: #fff, $alpha: 0.2);
+		clip-path: polygon(50% 100%, 0 0, 100% 0);
+	}
+	&__arrow-left {
+		width: 15px;
+		height: 30px;
+		background-color: rgba($color: #fff, $alpha: 0.2);
+		clip-path: polygon(100% 100%, 0 50%, 100% 0);
+	}
+	&__arrow-right {
+		width: 15px;
+		height: 30px;
+		background-color: rgba($color: #fff, $alpha: 0.2);
+		clip-path: polygon(100% 50%, 0 100%, 0 0);
+	}
 }
