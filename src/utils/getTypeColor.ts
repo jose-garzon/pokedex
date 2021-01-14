@@ -1,4 +1,6 @@
-export const getTypeColor = (type) => {
+import { TypeColor } from '../types/pokemonTypes';
+
+export const getTypeColor = (type: string): TypeColor | undefined => {
 	switch (type) {
 		case 'normal':
 			return { background: '#A8A090', color: 'white' };
