@@ -90,10 +90,24 @@
 .stats-screen {
 	width: 75%;
 	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
 	margin-top: 65px;
+	padding: 0 20px;
 	border-radius: 20px;
-	box-shadow: inset 0 10px 0 rgba($color: #000000, $alpha: 0.4);
+	box-shadow: inset 0 8px 0 rgba($color: #000000, $alpha: 0.4);
 	background-color: $dark-blue;
+	&__item {
+		width: 50%;
+		margin: 5px 0;
+		margin-left: 8px;
+		color: $white;
+		& span {
+			font-weight: bold;
+		}
+	}
 }
 .table {
 	width: 75%;

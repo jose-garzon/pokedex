@@ -17,7 +17,13 @@ export const pokeReducer = (action: Action, state: State): State => {
 		case 'SET_FAVORITE':
 			return {
 				...state,
+				favoriteAdded: false,
 				favorites: [...state.favorites, payload],
+			};
+		case 'FAVORITE_SUCCESS':
+			return {
+				...state,
+				favoriteAdded: true,
 			};
 
 		default:

@@ -17,6 +17,8 @@ export const getPokemonData = async (
 			types: data.types,
 			stats: data.stats,
 			moves: data.moves,
+			weight: data.weight,
+			experience: data.base_experience,
 		};
 	} catch (error) {
 		return error.message;
