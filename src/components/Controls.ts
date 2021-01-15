@@ -1,5 +1,4 @@
 import { State } from '../types/storeTypes';
-
 import { Action } from '../types/storeTypes';
 import { getPokemonData } from '../utils/getPokemonData';
 
@@ -34,15 +33,22 @@ class Controls {
 	arrowControls = ({ currentPokemon: { id } }: State) => {
 		this.right.onclick = () => this.setPokemon(id + 1);
 		this.up.onclick = () => this.setPokemon(id + 10);
+		if (id === 1) {
+			this.down.onclick = () => this.setPokemon(888);
+			this.left.onclick = () => this.setPokemon(898);
+		}
+		if (id === 898) {
+			this.right.onclick = () => this.setPokemon(1);
+			this.up.onclick = () => this.setPokemon(10);
+		}
 		if (id > 10) {
 			this.down.onclick = () => this.setPokemon(id - 10);
 		}
+		if (id < 10) {
+			this.down.onclick = () => this.setPokemon(898 - id);
+		}
 		if (id > 1) {
 			this.left.onclick = () => this.setPokemon(id - 1);
-		}
-		if (id < 10) {
-			this.down.onclick = () => this.setPokemon(898);
-			this.left.onclick = () => this.setPokemon(898);
 		}
 		document.onkeyup = ({ key }) => {
 			switch (key) {
@@ -71,6 +77,7 @@ class Controls {
 
 	addFavoritePokemon = ({ currentPokemon, favorites }: State) => {
 		this.addFavorite.onclick = () => {
+			this.dispatch({ type: 'FAVORITE_SUCCESS' });
 			this.dispatch({ type: 'SET_FAVORITE', payload: currentPokemon });
 		};
 		if (favorites.length === 10) {
