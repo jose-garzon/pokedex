@@ -5,6 +5,7 @@ export interface State {
 	error: string;
 	loading: boolean;
 	favorites: Array<Pokemon>;
+	favoriteAdded: boolean;
 }
 
 export interface Action {
