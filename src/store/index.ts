@@ -23,7 +23,7 @@ const createStore = (
 		notify(state);
 	};
 
-	return { subscribe, dispatch };
+	return { subscribe, dispatch, getState };
 };
 //================================
 const initialState = {
@@ -35,10 +35,13 @@ const initialState = {
 		types: [],
 		stats: [],
 		moves: [],
+		weight: 0,
+		experience: 0,
 	},
 	error: '',
 	loading: false,
 	favorites: [],
+	favoriteAdded: false,
 };
 
 export const generateStore = () => {

@@ -8,22 +8,28 @@ import Screen from './components/Screen';
 import Controls from './components/Controls';
 import PokemonSearcher from './components/PokemonSearcher';
 import Favorites from './components/Favorites';
+import Lights from './components/Lights';
+import StatsScreen from './components/StatsScreen';
 
 // // this is the store of the project
-const store = generateStore();
-const { dispatch, subscribe } = store;
+const { dispatch, subscribe } = generateStore();
 const pokedexScreen = new Screen();
+const pokedexSearch = new PokemonSearcher(dispatch);
 const pokedexControls = new Controls(dispatch);
 const pokedexFavorites = new Favorites();
-const pokedexSearch = new PokemonSearcher(dispatch);
+const PokedexLights = new Lights();
+const PokedexStats = new Lights();
+const pokedexStats = new StatsScreen();
 
-const showState = (state: State) => {
-	console.log(state);
-};
+// const showState = (state: State) => {
+// 	console.log(state);
+// };
 
 // this are the functions listening the store changes
-subscribe(showState);
-subscribe(pokedexScreen.printPoke);
+// subscribe(showState);
+subscribe(pokedexScreen.printPokemon);
 subscribe(pokedexControls.arrowControls);
 subscribe(pokedexControls.addFavoritePokemon);
 subscribe(pokedexFavorites.printFavorites);
+subscribe(PokedexLights.successMark);
+subscribe(pokedexStats.printStats);

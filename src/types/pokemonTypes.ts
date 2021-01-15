@@ -6,6 +6,8 @@ export interface Pokemon {
 	types: Array<Types>;
 	stats: Array<Stats>;
 	moves: Array<Moves>;
+	weight: number;
+	experience: number;
 }
 
 export interface SingleProp {

@@ -12,10 +12,16 @@
 	}
 	&__box {
 		height: 35px;
+		display: grid;
+		place-content: center;
 		width: 45%;
 		border-radius: 5px;
 		box-shadow: 5px 5px 0 $shadow;
 		background: $grey;
+		span {
+			font-weight: bold;
+			font-size: 18px;
+		}
 	}
 	&__right {
 		width: 20%;
@@ -42,6 +48,7 @@
 		border-radius: 50%;
 		background: $yellow;
 		box-shadow: $small-sphere-shadow;
+		transition: 0.1s;
 		&::after {
 			content: '';
 			width: 8px;
@@ -53,4 +60,8 @@
 			border-radius: 50%;
 		}
 	}
+}
+
+.succes-mark {
+	background: $middle-blue;
 }
