@@ -24,15 +24,11 @@ class Controls {
 
 	setPokemon = async (id: number) => {
 		this.dispatch({ type: 'LOADING' });
-		try {
-			const response = await getPokemonData(id);
-			this.dispatch({
-				type: 'SET_CURRENT_POKEMON',
-				payload: response,
-			});
-		} catch (error) {
-			this.dispatch({ type: 'SET_ERROR', payload: error.message });
-		}
+		const response = await getPokemonData(id);
+		this.dispatch({
+			type: 'SET_CURRENT_POKEMON',
+			payload: response,
+		});
 	};
 
 	arrowControls = ({ currentPokemon: { id } }: State) => {
@@ -43,6 +39,10 @@ class Controls {
 		}
 		if (id > 1) {
 			this.left.onclick = () => this.setPokemon(id - 1);
+		}
+		if (id < 10) {
+			this.down.onclick = () => this.setPokemon(898);
+			this.left.onclick = () => this.setPokemon(898);
 		}
 		document.onkeyup = ({ key }) => {
 			switch (key) {

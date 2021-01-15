@@ -12,6 +12,7 @@ export const pokeReducer = (action: Action, state: State): State => {
 			return {
 				...state,
 				error: payload,
+				loading: false,
 			};
 		case 'SET_FAVORITE':
 			return {
