@@ -19,6 +19,6 @@ export const getPokemonData = async (
 			moves: data.moves,
 		};
 	} catch (error) {
-		console.log(error.message);
+		return error.message;
 	}
 };

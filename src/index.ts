@@ -12,7 +12,6 @@ import Favorites from './components/Favorites';
 // // this is the store of the project
 const store = generateStore();
 const { dispatch, subscribe } = store;
-debugger;
 const pokedexScreen = new Screen();
 const pokedexControls = new Controls(dispatch);
 const pokedexFavorites = new Favorites();
@@ -22,8 +21,9 @@ const showState = (state: State) => {
 	console.log(state);
 };
 
+// this are the functions listening the store changes
 subscribe(showState);
 subscribe(pokedexScreen.printPoke);
-subscribe(pokedexControls.addFavoritePokemon);
 subscribe(pokedexControls.arrowControls);
+subscribe(pokedexControls.addFavoritePokemon);
 subscribe(pokedexFavorites.printFavorites);
