@@ -23,14 +23,14 @@ class PokemonSearcher {
 		this.input.onchange = async ({ target: { value } }: any): Promise<void> => {
 			const searchValue: string = value.toLowerCase();
 			this.dispatch({ type: 'LOADING' });
-			try {
-				const response = await getPokemonData(searchValue);
+			const response = await getPokemonData(searchValue);
+			if (typeof response === 'string') {
+				this.dispatch({ type: 'SET_ERROR', payload: response });
+			} else {
 				this.dispatch({
 					type: 'SET_CURRENT_POKEMON',
 					payload: response,
 				});
-			} catch (error) {
-				this.dispatch({ type: 'SET_ERROR', payload: error.message });
 			}
 		};
 	};
