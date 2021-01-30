@@ -1,0 +1,121 @@
+@media (max-width: 400px) {
+  .main-container {
+    width: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 20px 1fr;
+  }
+
+  .left {
+    height: 100vh;
+  }
+  .header {
+    &__up {
+      height: 80px;
+      background-color: $main-red;
+      box-shadow: 0 30px 0 $shadow;
+    }
+    &__left {
+      position: absolute;
+      width: 100px;
+      height: 170px;
+      &::after {
+        width: 250px;
+        transform: skewX(-50deg) translateX(40%);
+      }
+    }
+  }
+  .radar {
+    width: 120px;
+    height: 120px;
+    &::before {
+      content: "";
+      width: calc(100% - 16px);
+      height: calc(100% - 16px);
+      border: 8px solid $light-blue;
+    }
+    &__blue-circle {
+      width: 75%;
+      height: 75%;
+      border: 6px solid $dark-blue;
+    }
+    &__shine {
+      width: 20%;
+      height: 20%;
+      &::after {
+        content: "";
+        width: 10px;
+        height: 30px;
+        top: -30px;
+        left: -20px;
+      }
+    }
+  }
+  .state-lights {
+    margin-left: 25px;
+  }
+  .screen {
+    width: 90%;
+    top: 200px;
+    right: 20px;
+    border-radius: 20px;
+    box-shadow: 8px 8px 0 $shadow;
+    &__image {
+      width: 70%;
+    }
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__button {
+      width: 50px;
+      height: 50px;
+    }
+    &__name {
+      font-size: 25px;
+    }
+    &__sound-outlet {
+      width: 70px;
+    }
+  }
+  .controls {
+    width: 90%;
+    right: 0;
+    padding-right: 30px;
+    &__buttons {
+      width: 70%;
+    }
+    &__state-buttons {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    &__button-blue {
+      width: 65px;
+      height: 65px;
+      margin-right: 20px;
+    }
+    &__types {
+      flex-direction: column;
+    }
+    &__type {
+      margin: 5px;
+    }
+    &__button-yellow {
+      width: 200px;
+      margin-top: 10px;
+    }
+  }
+
+  .right {
+    height: 100vh;
+  }
+
+  .pivot {
+    background: none;
+    border-radius: 30px;
+    &::before {
+      display: none;
+    }
+  }
+} ;

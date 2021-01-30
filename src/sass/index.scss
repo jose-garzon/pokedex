@@ -1,25 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	height: 100vh;
-	display: grid;
-	place-items: center;
-	font-family: 'Share Tech Mono', monospace;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Share Tech Mono", monospace;
 }
 
-@import './tokens';
-@import './animations';
-@import './container';
-@import './header';
-@import './screen';
-@import './controls';
-@import './loader';
-@import './selector';
-@import './bottomScreens';
-@import './pivot';
+@import "./tokens";
+@import "./animations";
+@import "./container";
+@import "./header";
+@import "./screen";
+@import "./controls";
+@import "./loader";
+@import "./selector";
+@import "./bottomScreens";
+@import "./pivot";
+@import "./mediaQueries";
